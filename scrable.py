@@ -1,3 +1,4 @@
+import sys
 SCORES = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
           "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
           "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
@@ -18,9 +19,17 @@ if pl == "yes":
     anwser = input("double or tripple? ")
     if anwser =="double":
         letters = input("\nType in the letters that should be doubled: ")
+        for i in letters:
+            if i not in w:
+                print("Those letters were not included in the original word ")
+                sys.exit(0)
         result += scrabble_score(letters)
     elif anwser == "tripple":
         letters = input("\nType in the letters that should be trippled: ")
+        for i in letters:
+            if i not in w:
+                print("Those letters were not included in the original word ")
+                sys.exit(0)
         result += 2*scrabble_score(letters)
 
 pw = input ("\nAre there any premium word points? yes/no ")
